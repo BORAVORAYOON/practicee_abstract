@@ -1,0 +1,41 @@
+* {
+  margin: 0 auto;
+  font-size: 14px;
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sr-only {
+
+}
+
+header {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+}
+
+.logo {
+  float: left;
+}
+
+.search {
+  background-color: #dadbf1;
+}
+
+.category-form a {
+color: #4C5FD5;
+}
+
+.category {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #000000;
+  color: #fff;
+}
