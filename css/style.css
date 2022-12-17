@@ -17,7 +17,7 @@ button {
 }
 
 /* 숨김 컨텐츠 */
-.sr-only {
+.sr-only, legend {
   position: absolute;
   width: 1px;
   height: 1px;
