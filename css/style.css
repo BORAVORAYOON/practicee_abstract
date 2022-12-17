@@ -16,6 +16,7 @@ button {
   color: var(--secondary-color);
 }
 
+/* 숨김 컨텐츠 */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -63,6 +64,7 @@ header {
   font-size: var(--text-lg);
 }
 
+/* button */
 .sign-button-wrapper button {
   border-radius: 8px;
   font-size: var(--text-md);
@@ -86,22 +88,39 @@ header {
   background-color: #dadbf1;
 }
 
-.category-form a {
-color: #4C5FD5;
-}
-
+/* category */
 .category {
+  margin: 100px 0;
   background-color: #fff;
 }
+
+.category-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.category-contents {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.category-form img {
+  width: 25%;
+}
+
+.category-form a {
+  color: #4C5FD5;
+  }
 
 footer {
   background-color: #000000;
   color: #fff;
 }
 
-/* 모바일 디바이스 */
+/* 500px 이하 */
 @media (max-width: 500px) {
-  /* 모바일 사인인버튼 */
+  /* max-500-button */
   .sign-button-wrapper {
     display: none;
     position: absolute;
@@ -120,7 +139,7 @@ footer {
     background-color: transparent;
     border: none;
   }
-
+  
   .button-sign-in::before {
     content: "";
     display: block;
@@ -129,10 +148,18 @@ footer {
     background-color: var(--secondary-color);
     margin: var(--spacing-sm) 0;
   }
+
+  /* max-500-category */
+  .category-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
 }
 
+/* 501px 이상 768px 이하 */
 @media (min-width: 501px) and (max-width: 768px) {
-  /* 모바일 사인인버튼 */
+  /* min-501-max-768-button */
   .sign-button-wrapper {
     display: none;
     position: absolute;
@@ -151,7 +178,7 @@ footer {
     background-color: transparent;
     border: none;
   }
-
+  
   .button-sign-in::before {
     content: "";
     display: block;
@@ -160,11 +187,18 @@ footer {
     background-color: var(--secondary-color);
     margin: var(--spacing-sm) 0;
   }
+
+  /* min-501-max-768-category */
+  .category-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
 }
 
-/* 태블릿 디바이스 */
+/* 769px 이상 1199px */
 @media (min-width: 769px) and (max-width: 1199px) {
-  /* 태블릿 사인인버튼 */
+  /* min-769-max-1199-button */
   .sign-button-wrapper {
     display: none;
     position: absolute;
@@ -183,7 +217,7 @@ footer {
     background-color: transparent;
     border: none;
   }
-
+  
   .button-sign-in::before {
     content: "";
     display: block;
@@ -192,6 +226,7 @@ footer {
     background-color: var(--secondary-color);
     margin: var(--spacing-sm) 0;
   }
+  
 }
 
 /* 데스크탑 디바이스 */
