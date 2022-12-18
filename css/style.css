@@ -16,7 +16,7 @@ button {
   color: var(--secondary-color);
 }
 
-/* 숨김 컨텐츠 */
+/* hidden contents */
 .sr-only, legend {
   position: absolute;
   width: 1px;
@@ -29,9 +29,6 @@ button {
 header {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
   padding: 1rem 5.5rem;
 }
 
@@ -64,31 +61,40 @@ header {
   font-size: var(--text-lg);
 }
 
-/* button */
-.sign-button-wrapper button {
-  border-radius: 8px;
-  font-size: var(--text-md);
-  letter-spacing: 1px;
-}
+/* BUTTON */
+.sign-button-wrapper {
+    position: absolute;
+    width: 100%;
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--secondary-color);
+    top: 72px;
+    right: 0;
+  }
+  
+  .button-submit, .button-sign-in {
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .button-sign-in::before {
+    content: "";
+    display: block;
+    width: 30rem;
+    height: 1px;
+    background-color: var(--secondary-color);
+    margin: var(--spacing-sm) 0;
+  }
 
-.button-submit {
-  background-color: #000;
-  border: 1px solid #fff;
-  padding: 12px 20px;
-}
-
-.button-sign-in {
-  background-color: var(--accent-color);
-  border: none;
-  margin-left: 10px;
-  padding: 12px 30px;
-}
-
+/* SEARCH */
 .search {
   background-color: #dadbf1;
 }
 
-/* category */
+/* CATEGORY */
 .category {
   margin: 100px 0;
   background-color: #fff;
@@ -118,38 +124,12 @@ footer {
   color: #fff;
 }
 
-/* 500px 이하 */
+/* MIN 500px */
 @media (max-width: 500px) {
-  /* max-500-button */
+  /* MAX 500 CATEGORY */
   .sign-button-wrapper {
-    /* display: none; */
-    position: absolute;
-    width: 100%;
-    padding: 4rem 0;
-    background-color: var(--primary-color);
-    border-top: 1px solid var(--secondary-color);
-    left: 0;
-    top: 72px;
+    display: none;
   }
-  
-  .button-submit, .button-sign-in {
-    padding: 0;
-    margin: 0 auto;
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-  
-  .button-sign-in::before {
-    content: "";
-    display: block;
-    width: 30rem;
-    height: 1px;
-    background-color: var(--secondary-color);
-    margin: var(--spacing-sm) 0;
-  }
-
-  /* max-500-category */
   .category-form {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -157,38 +137,14 @@ footer {
   
 }
 
-/* 501px 이상 768px 이하 */
+/* MIN 501px MAX 768px */
 @media (min-width: 501px) and (max-width: 768px) {
-  /* min-501-max-768-button */
+  /* MIN 501 max 768 BUTTON */
   .sign-button-wrapper {
-    /* display: none; */
-    position: absolute;
-    width: 100%;
-    padding: 4rem 0;
-    background-color: var(--primary-color);
-    border-top: 1px solid var(--secondary-color);
-    left: 0;
-    top: 72px;
-  }
-  
-  .button-submit, .button-sign-in {
-    padding: 0;
-    margin: 0 auto;
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-  
-  .button-sign-in::before {
-    content: "";
-    display: block;
-    width: 30rem;
-    height: 1px;
-    background-color: var(--secondary-color);
-    margin: var(--spacing-sm) 0;
+    display: none;
   }
 
-  /* min-501-max-768-category */
+  /* MIN 501 MAX 768 CATEGORY */
   .category-form {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -196,40 +152,53 @@ footer {
   
 }
 
-/* 769px 이상 1199px */
-@media (min-width: 769px) and (max-width: 1199px) {
-  /* min-769-max-1199-button */
+/* MIN 769px MAX 1199px */
+@media (min-width: 769px) and (max-width: 1999px) {
+  /* MIN 769px MAX 1999px BUTTON */
   .sign-button-wrapper {
-    /* display: none; */
-    position: absolute;
-    width: 100%;
-    padding: 4rem 0;
-    background-color: var(--primary-color);
-    border-top: 1px solid var(--secondary-color);
-    left: 0;
-    top: 72px;
+    display: none;
   }
-  
-  .button-submit, .button-sign-in {
-    padding: 0;
-    margin: 0 auto;
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-  
-  .button-sign-in::before {
-    content: "";
-    display: block;
-    width: 30rem;
-    height: 1px;
-    background-color: var(--secondary-color);
-    margin: var(--spacing-sm) 0;
-  }
-  
 }
-
-/* 데스크탑 디바이스 */
+/* DESKTOP DEVICE */
 @media (min-width: 2000px) {
+  /* DESKTOP HEADER */
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
   
+  /* DESKTOP BUTTON */
+  .sign-button-wrapper {
+    width: 23rem;
+    height: auto;
+    border: none;
+    padding: 0;
+    margin: var(--spacing-sm) var(--spacing-xl);
+    top: 0;
+  }
+
+  .button-submit, .button-sign-in {
+    margin: 0;
+    border-radius: 8px;
+    font-size: var(--text-md);
+    letter-spacing: 1px;
+    display: inline-block;
+  }
+
+  .button-submit {
+    background-color: #000;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+  }
+
+  .button-sign-in {
+    background-color: var(--accent-color);
+    border: none;
+    margin-left: 10px;
+    padding: 12px 30px;
+  }
+  .button-sign-in::before {
+    display: none;
+  }
 }
